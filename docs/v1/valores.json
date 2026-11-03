@@ -1,0 +1,21 @@
+{
+ "salario_minimo": {
+  "2026": 1621.0,
+  "fonte": "INSS BEPS 2026-08",
+  "verificado": true
+ },
+ "bolsa_familia": {
+  "desde": "2026-10",
+  "minimo_familia": 691.0,
+  "renda_cidadania_por_pessoa": 163.36,
+  "primeira_infancia_0_6": 172.56,
+  "variavel_familiar_7_18_gestante": 57.52,
+  "variavel_nutriz_0_6_meses": 57.52,
+  "estimativa": "max(pessoas x renda_cidadania, minimo_familia) + criancas_0_6 x primeira_infancia + (7_18 + gestantes + nutrizes) x variavel",
+  "fontes": [
+   "https://agenciabrasil.ebc.com.br/economia/noticia/2026-09/bolsa-familia-e-reajustado-em-15-medida-vale-partir-de-outubro",
+   "https://diariodocomercio.com.br/economia/bolsa-familia-aumento-valor/"
+  ],
+  "verificado": false
+ }
+}

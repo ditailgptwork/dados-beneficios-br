@@ -1,0 +1,29 @@
+{
+ "2026": {
+  "ano_base": 2024,
+  "teto_renda_media": 2766.0,
+  "prazo": "2026-12-29",
+  "pis_por_mes_de_nascimento": {
+   "jan": "2026-02-15",
+   "fev": "2026-03-15",
+   "mar": "2026-04-15",
+   "abr": "2026-04-15",
+   "mai": "2026-05-15",
+   "jun": "2026-05-15",
+   "jul": "2026-06-15",
+   "ago": "2026-06-15",
+   "set": "2026-07-15",
+   "out": "2026-07-15",
+   "nov": "2026-08-15",
+   "dez": "2026-08-15"
+  },
+  "valor": "meses trabalhados no ano-base x salário mínimo / 12",
+  "fontes": [
+   "https://www.gov.br/trabalho-e-emprego/pt-br/noticias-e-conteudo/2025/dezembro/codefat-aprova-calendario-do-abono-salarial-para-2026"
+  ],
+  "verificado": false
+ },
+ "2027": {
+  "status": "aguardando Codefat (normalmente dez/jan); ano-base 2025"
+ }
+}

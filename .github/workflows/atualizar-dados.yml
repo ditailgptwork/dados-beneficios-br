@@ -1,0 +1,31 @@
+name: atualizar-dados
+on:
+  schedule:
+    - cron: "0 9 * * *"   # 06:00 em Brasília
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: write
+jobs:
+  dados:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python -m pytest -q tests
+      - run: python pipeline/build.py --collect
+      - name: publicar se mudou
+        run: |
+          git config user.name "dados-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs
+          git diff --cached --quiet || git commit -m "dados: atualização $(date -u +%F)"
+          git push
+      - name: abrir aviso se algo divergiu
+        if: hashFiles('issues.md') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue create --title "Revisar dados $(date -u +%F)" --body-file issues.md
